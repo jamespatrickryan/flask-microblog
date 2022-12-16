@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import BooleanField, PasswordField, StringField, SubmitField
-from wtforms.validators import DataRequired, Email, EqualTo, ValidationError
+from wtforms import BooleanField, PasswordField, StringField, SubmitField, TextAreaField
+from wtforms.validators import DataRequired, Email, EqualTo, Length, ValidationError
 
 from app.models import User
 
@@ -33,3 +33,9 @@ class RegistrationForm(FlaskForm):
         if user is not None:
             message = 'The email address is taken earlier on.'
             raise ValidationError(message)
+
+
+class EditProfileForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired()])
+    bio = TextAreaField('Bio', validators=[Length(min=0, max=140)])
+    save = SubmitField('Save')
