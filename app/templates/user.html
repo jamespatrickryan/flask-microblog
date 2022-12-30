@@ -31,6 +31,12 @@
     </table>
     <hr>
     {% for post in posts %}
-        {% include "_post.html" %}
+        {% include '_post.html' %}
     {% endfor %}
+    {% if new %}
+    <a href="{{ new }}">Newer Posts</a>
+    {% endif %}
+    {% if old %}
+    <a href="{{ old }}">Older Posts</a>
+    {% endif %}
 {% endblock %}
