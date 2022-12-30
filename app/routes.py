@@ -122,6 +122,7 @@ def edit_profile():
 @login_required
 def follow(username):
     form = EmptyForm()
+
     if form.validate_on_submit():
         user = User.query.filter_by(username=username).first()
         if user is None:
@@ -142,6 +143,7 @@ def follow(username):
 @login_required
 def unfollow(username):
     form = EmptyForm()
+
     if form.validate_on_submit():
         user = User.query.filter_by(username=username).first()
         if user is None:
