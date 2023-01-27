@@ -4,6 +4,7 @@ Flask-Bootstrap==3.3.7.1
 Flask-Login==0.6.2
 Flask-Mail==0.9.1
 Flask-Migrate==4.0.0
+Flask-Moment==1.0.5
 Flask-SQLAlchemy==3.0.2
 Flask-WTF==1.0.1
 PyJWT==2.6.0
