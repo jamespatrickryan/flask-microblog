@@ -2,7 +2,7 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-    <h1>Hi, {{ current_user.username }}.</h1>
+    <h1>{{ _('Hi, %(username)s.', username=current_user.username) }}</h1>
     {% if form %}
     {{ wtf.quick_form(form) }}
     <br>
@@ -14,12 +14,12 @@
         <ul class="pager">
             <li class="new{% if not new %} disabled{% endif %}">
                 <a href="{{ new or '#' }}">
-                    <span aria-hidden="true">&larr;</span> Newer Posts
+                    <span aria-hidden="true">&larr;</span> {{ _('Newer Posts') }}
                 </a>
             </li>
             <li class="old{% if not old %} disabled{% endif %}">
                 <a href="{{ old or '#' }}">
-                    Older Posts <span aria-hidden="true">&rarr;</span>
+                    {{ _('Older Posts') }} <span aria-hidden="true">&rarr;</span>
                 </a>
             </li>
         </ul>
