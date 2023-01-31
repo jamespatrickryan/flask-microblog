@@ -15,7 +15,18 @@
                  username=user,
                  when=moment(post.timestamp).fromNow()) }}
             <br>
-            {{ post.body }}
+            <span id="post{{ post.id }}">{{ post.body }}</span>
+            {% if post.language and post.language != g.locale %}
+            <br><br>
+            <span id="translate{{ post.id }}">
+                <a href="javascript:translate(
+                            '#post{{ post.id }}',
+                            '#translate{{ post.id }}',
+                            '{{ g.locale }}');">
+                    {{ _('Translate') }}
+                </a>
+            </span>
+            {% endif %}
         </td>
     </tr>
 </table>

@@ -19,3 +19,4 @@ class Config(object):
     ADMINS = ['pasafortejamespatrick@gmail.com']
     POSTS_PER_PAGE = 3
     LANGUAGES = ['en', 'es']
+    X_RAPIDAPI_KEY = os.environ.get('X_RAPIDAPI_KEY')
