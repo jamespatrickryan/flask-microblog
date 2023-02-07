@@ -14,6 +14,9 @@
             {{ _('%(username)s said %(when)s',
                  username=user,
                  when=moment(post.timestamp).fromNow()) }}
+            {% if post.author == current_user %}
+            <a href="{{ url_for('main.delete', id=post.id) }}">{{ _('Delete') }}</a>
+            {% endif %}
             <br>
             <span id="post{{ post.id }}">{{ post.body }}</span>
             {% if post.language and post.language != g.locale %}

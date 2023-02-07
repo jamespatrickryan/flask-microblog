@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-02-01 17:11+0800\n"
+"POT-Creation-Date: 2023-02-02 20:21+0800\n"
 "PO-Revision-Date: 2023-01-31 19:14+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -115,47 +115,51 @@ msgstr "¿Qué tienes en mente?"
 msgid "Post"
 msgstr "Publicar"
 
-#: app/main/routes.py:42
+#: app/main/routes.py:41
 msgid "Your post is now live."
 msgstr "Tu publicación ya está activa."
 
-#: app/main/routes.py:54 app/templates/base.html:21
+#: app/main/routes.py:53 app/templates/base.html:21
 #: app/templates/errors/404.html:5 app/templates/errors/500.html:6
 msgid "Home"
 msgstr "Inicio"
 
-#: app/main/routes.py:70 app/templates/base.html:22
+#: app/main/routes.py:62
+msgid "Post deleted."
+msgstr "Publicación eliminada."
+
+#: app/main/routes.py:78 app/templates/base.html:22
 msgid "Explore"
 msgstr "Explorar"
 
-#: app/main/routes.py:112
+#: app/main/routes.py:120
 msgid "Changes saved."
 msgstr "Cambios guardados."
 
-#: app/main/routes.py:118 app/templates/edit_profile.html:5
+#: app/main/routes.py:126 app/templates/edit_profile.html:5
 #: app/templates/user.html:15
 msgid "Edit profile"
 msgstr "Editar perfil"
 
-#: app/main/routes.py:129 app/main/routes.py:150
+#: app/main/routes.py:137 app/main/routes.py:158
 #, python-format
 msgid "User %(username)s not found."
 msgstr "Usuario %(username)s no encontrado."
 
-#: app/main/routes.py:132
+#: app/main/routes.py:140
 msgid "You cannot follow yourself."
 msgstr "No puedes seguirte a ti mismo."
 
-#: app/main/routes.py:136
+#: app/main/routes.py:144
 #, python-format
 msgid "You followed %(username)s."
 msgstr "Seguiste a %(username)s."
 
-#: app/main/routes.py:153
+#: app/main/routes.py:161
 msgid "You cannot unfollow yourself."
 msgstr "No puedes dejar de seguirte a ti mismo."
 
-#: app/main/routes.py:157
+#: app/main/routes.py:165
 #, python-format
 msgid "You unfollowed %(username)s."
 msgstr "Has dejado de seguir a %(username)s."
@@ -168,6 +172,10 @@ msgstr "%(username)s dijo %(when)s"
 #: app/templates/_post.html:27
 msgid "Translate"
 msgstr "Traducir"
+
+#: app/templates/_post.html:31
+msgid "Delete"
+msgstr "Borrar"
 
 #: app/templates/base.html:17
 msgid "Microblog"

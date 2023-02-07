@@ -54,6 +54,15 @@ def index():
                            posts=posts.items, new=new, old=old)
 
 
+@blueprint.route('/delete/<int:id>')
+@login_required
+def delete(id):
+    Post.query.filter_by(id=id).delete()
+    db.session.commit()
+    flash(_('Post deleted.'))
+    return redirect(url_for('main.index'))
+
+
 @blueprint.route('/explore')
 @login_required
 def explore():

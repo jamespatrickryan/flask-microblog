@@ -12,12 +12,12 @@
     {% endfor %}
     <nav aria-label="...">
         <ul class="pager">
-            <li class="new{% if not new %} disabled{% endif %}">
+            <li class="previous{% if not new %} disabled{% endif %}">
                 <a href="{{ new or '#' }}">
                     <span aria-hidden="true">&larr;</span> {{ _('Newer Posts') }}
                 </a>
             </li>
-            <li class="old{% if not old %} disabled{% endif %}">
+            <li class="next{% if not old %} disabled{% endif %}">
                 <a href="{{ old or '#' }}">
                     {{ _('Older Posts') }} <span aria-hidden="true">&rarr;</span>
                 </a>
