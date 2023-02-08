@@ -80,6 +80,7 @@ def explore():
 
 
 @blueprint.route('/user/<username>')
+@login_required
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
     form = EmptyForm()
@@ -97,6 +98,15 @@ def user(username):
 
     return render_template('user.html', user=user, posts=posts,
                            form=form, new=new, old=old)
+
+
+@blueprint.route('/user/<username>/popup')
+@login_required
+def user_popup(username):
+    user = User.query.filter_by(username=username).first_or_404()
+    form = EmptyForm()
+
+    return render_template('user_popup.html', user=user, form=form)
 
 
 @blueprint.before_request
