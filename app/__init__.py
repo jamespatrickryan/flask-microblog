@@ -28,7 +28,7 @@ db = SQLAlchemy()
 
 def create_app(config_class=Config):
     app = Flask(__name__)
-    app.config.from_object(Config)
+    app.config.from_object(config_class)
 
     babel.init_app(app)
     bootstrap.init_app(app)
@@ -64,7 +64,7 @@ def create_app(config_class=Config):
             app.logger.addHandler(mail_handler)
 
         if not os.path.exists('logs'):
-            os.makedirs('logs')
+            os.mkdir('logs')
         file_handler = RotatingFileHandler(
             'logs/microblog.log',
             maxBytes=10240,
