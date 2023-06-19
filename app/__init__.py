@@ -38,8 +38,9 @@ def create_app(config_class=Config):
     migrate.init_app(app, db)
     moment.init_app(app)
 
-    from app import auth, errors, main
+    from app import api, auth, errors, main
 
+    app.register_blueprint(api.blueprint, url_prefix='/api')
     app.register_blueprint(auth.blueprint, url_prefix='/auth')
     app.register_blueprint(errors.blueprint)
     app.register_blueprint(main.blueprint)
