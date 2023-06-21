@@ -10,14 +10,14 @@ def wants_json_response():
         request.accept_mimetypes['text/html']
 
 
-@blueprint.errorhandler(404)
+@blueprint.app_errorhandler(404)
 def not_found_error(error):
     if wants_json_response():
         return api_error_response(404)
     return render_template('errors/404.html'), 404
 
 
-@blueprint.errorhandler(500)
+@blueprint.app_errorhandler(500)
 def internal_error(error):
     db.session.rollback()
     if wants_json_response():
